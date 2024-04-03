@@ -1,15 +1,22 @@
-import ComponentImage from './assets/components.png';
+import { useState } from "react"; //1 React Hook
+
 import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept/CoreConcept.jsx"
 import {CORE_CONCEPTS} from "./data.js" 
 import TabButton from './components/TabButton.jsx';
 
 function App() {
-  function handleSelect(SelectedButton){
-    console.log(SelectedButton);
+  const [ selecetedTopic, setSelectedTopic ] = useState('Please Click a Button'); //2: useState returns an array 
+
+
+  function handleSelect(selectedButton){
+    // selectedButton=> 'components','jsx','props','state'
+    setSelectedTopic(selectedButton)
+    console.log(selecetedTopic);
+    
 }
 return (
-    <div>
+  <div>
     <Header />
       <main>
         <section id='core-concepts'>
@@ -37,11 +44,10 @@ return (
             <TabButton onSelect={()=> handleSelect('Props')}>Props</TabButton>
             <TabButton onSelect={()=> handleSelect('State')}>State</TabButton>
           </menu>
-          Dynamic Content
+          {selecetedTopic}
         </section>
     </main>
   </div>
   );
-}
-  
+}  
 export default App;
