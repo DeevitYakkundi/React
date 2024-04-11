@@ -27,7 +27,7 @@ export function DropMenu() {
 
     return (
         <div>
-            <h1>Drop Menu</h1>
+            <h3>Drop Menu</h3>
             <input onChange={(event) => {
                 setStateFormData({
                     ...currentStateFormData,
@@ -59,9 +59,8 @@ export function DropMenu() {
                 
             </select>
             <p>Hi my name is {currentStateFormData.name}.
-                I'm from {currentStateFormData.city}.</p>
-
-
+                I'm from {currentStateFormData.city}.
+            </p>
         </div>
     );
 }

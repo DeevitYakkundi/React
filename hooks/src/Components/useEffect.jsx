@@ -31,28 +31,16 @@ export function UseEffect(){
         <div>
             <div>
                 <p>Execution of different processes. Click the Below button 5 times.</p>
-                Click Count: {initialCount} <br />
-            </div>
+                <b>Click Count: {initialCount}</b> <br />
+            </div> <br />
             <button onClick={handleClick}>Click Me</button>
             {/* //2 */}
             <div>
                 { showText ?
-                    <p>This text is rendered as a effect of precessing the button 5 times.</p>
+                    <p><i>(This text is rendered as a effect of precessing the button 5 times.)</i></p>
                 : null}
             </div>
-            <p>
-                    The process of calling an API
-                    <ol>
-                        <li>Create a async functional method component
-                            <p>Which returns proimse.</p>
-                            <p>try & catch method is used to access them.</p>
-                        </li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-
-                    </ol>
-            </p>
+            
 
         </div>
     )

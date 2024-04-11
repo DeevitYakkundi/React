@@ -7,10 +7,11 @@ import { UseEffect } from './Components/useEffect';
 function App() {
   return (
     <div className="App">
-      <h1>UseState Hook</h1>
-        <Button />
-        <DropMenu />
-      <h1>useEffect Hook</h1>
+      <h1>Demo App to understand how Hooks work</h1><hr/>
+      <h2><u>UseState Hook</u></h2>
+        {/* <Button /> */}
+        {/* <DropMenu /> */}<hr/>
+      <h2><u>useEffect Hook</u></h2>
         <UseEffect />
     </div>
   );
