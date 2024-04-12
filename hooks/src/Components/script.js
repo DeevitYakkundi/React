@@ -1,20 +1,21 @@
-// simple promise to google , 
+// simple function which returns a promise to google , 
 function makeRequest(location){ 
     return new Promise((resolve,reject)=>{
-        console.log('Making request to' + location)
+        console.log('Making request to ' + location)
         if(location==="Google"){
-            resolve('Google Search');
+            resolve('Google Search'); //if true -> resolve
         }
         else{
-            reject('We need Google');
+            reject('We need Google'); //else false -> reject
         }
     })
 }
 
+//simple function which returns a promise for processing
 function processRequest(response){
     return new Promise((resolve,reject)=> {
         console.log('Processing Request');
-        resolve('Extra Info '+ response)
+        resolve('Extra Info '+ response) //if true -> resolve
     })
 }
 

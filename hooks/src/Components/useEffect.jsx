@@ -2,31 +2,41 @@ import React,{useState, useEffect} from "react";
 
 export function UseEffect(){
     const [initialCount,setCount] = useState(0);
-    const [showText,setShowText] = useState(false); //1
-
+    const [showText,setShowText] = useState(false);
+    const [productList,setProductList] = useState([]);
+    const [showText2, setShowText2] = useState(false);
+    
 
     function handleClick(){
         setCount(initialCount => initialCount + 1);
     }
-    useEffect(()=> {
-        if(initialCount === 5){
-            setShowText(true);
-        }
-    },[initialCount]);
-
-    // useEffect(()=> {
-
-    // },[])
-
-    async function fetchData(){
+    function handleClick2(){
+        setProductList([]);
+    }
+    async function fetchAllProducts (){
         try{
-
+            const response = await fetch('https://dummyjson.com/products');
+            const result = await response.json();
+            if(result && result.products){
+                setProductList(result.products);
+            }
         }
         catch(error){
             console.log(error);
         }
     }
 
+    useEffect(()=> {
+        if(initialCount === 5){
+            setShowText(true);
+        }
+        if(initialCount === 10){
+        fetchAllProducts();};
+        if(initialCount === 7){
+            setShowText2(true);
+        }
+    },[initialCount])
+    
     return (
         <div>
             <div>
@@ -36,12 +46,35 @@ export function UseEffect(){
             <button onClick={handleClick}>Click Me</button>
             {/* //2 */}
             <div>
-                { showText ?
-                    <p><i>(This text is rendered as a effect of precessing the button 5 times.)</i></p>
-                : null}
-            </div>
-            
-
+                {
+                    showText ? (
+                      <div>
+                        <p><i>(This text is rendered as an effect of processing the button 5 times.)</i></p>
+                        <b>Now click the button 5 more times until count 10.</b>
+                      </div>
+                    ) : null
+                }
+                <div>
+                    {
+                        showText2 ? (
+                        <div>
+                            <h3>(Product list)</h3>
+                            <i>(This list is fetched from a dummyJSON website)</i>
+                        </ div>
+                    ) : null
+                    }
+                    <ul>
+                        {productList && productList.slice(0,10).map((item) => 
+                            <li>
+                                <b>Product Name:</b> {item.title},<b> Description: </b>{item.description} 
+                            </li>)}
+                    </ul>
+                    {
+                        productList.length>0?(
+                        <button onClick={handleClick2}>Close List</button>):null
+                    }
+                </div>
+            </div> 
         </div>
     )
 }
