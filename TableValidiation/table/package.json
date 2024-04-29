@@ -7,10 +7,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "papaparse": "^5.4.1",
-<<<<<<< HEAD
     "primereact": "^10.6.3",
-=======
->>>>>>> dda06083267c53e208e15c866d8a33ece2d98c69
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
