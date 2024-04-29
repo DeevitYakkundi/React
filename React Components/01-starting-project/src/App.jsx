@@ -54,4 +54,8 @@ return (
   </div>
   );
 }  
+<<<<<<< HEAD
 export default App;
+=======
+export default App;
+>>>>>>> dda06083267c53e208e15c866d8a33ece2d98c69
