@@ -3,8 +3,7 @@ import './App.css';
 import { Button } from './Components/button';
 import { DropMenu } from './Components/dropMenu';
 import { UseEffect } from './Components/useEffect';
-import { UseContext } from './Components/UseContext'
-import { UseContext2 } from './Components/UseContext2';
+import UseContextHook from './Components/context/use-context';
 
 function App() {
   return (
@@ -15,14 +14,13 @@ function App() {
         {/* <DropMenu /><hr/> */}
       {/* <h2><u>useEffect Hook</u></h2> */}
         {/* <UseEffect /><hr/> */}
-      <h2><u>useContext Hook</u></h2>
+      
       <div style={{display:'flex', gap:'10px', justifyContent:'center'}}>
-        <UseContext/>
-        <UseContext2/>
+        <UseContextHook />
+
       <hr/>
       </div>
     </div>
   );
 }
-
 export default App;
