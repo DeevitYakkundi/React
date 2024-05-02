@@ -6,7 +6,7 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
-  
+
 function TableComponent({ csvFilePath }){
 
   // useEffect(()=> {
@@ -21,7 +21,6 @@ function TableComponent({ csvFilePath }){
   //       skipEmptyLines: true
   //     }).data;
   //     setData(parsedData);
-
   //   };
   //   fetchData();
   // },[]);
@@ -59,7 +58,7 @@ function TableComponent({ csvFilePath }){
 
         <div className="Execution">
           <div className="UploadData">
-            <u>Upload a file to see how the csv file is accessed</u>  :) <br/> <br/> 
+            <u>Upload a file to see how the csv file is accessed !!</u>  :) <br/> <br/> 
 
             <input type="file" accept=".csv" onChange={handleFileUpload} /><br/> <hr />
 
