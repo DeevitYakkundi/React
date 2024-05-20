@@ -5,11 +5,11 @@ export default function TransactionsList(transactions, deleteTransaction) {
     <div>
       <h3>Transactions</h3>
       <ul className='list'>
-        {transactions.map((transaction) => {
+        {/* {transactions.map((transaction) => {s
             return(
                 <Transaction key={transaction.id} transaction={transaction} deleteTransaction={(id) => deleteTransaction(id)}/>
             )
-        })}
+        })} */}
       </ul>
     </div>
   )

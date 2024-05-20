@@ -9,11 +9,11 @@ export default function AddTransaction({ id, addTransaction }) {
         const newTransaction = {
             id: id,
             text: text,
-            amount: amount
+            amount: parseFloat(amount)
         }
-        addTransaction(newTransaction)
-
+        addTransaction(newTransaction);
     }
+    console.log(typeof(amount) ,"efhu");
 
     return (
         <div>
